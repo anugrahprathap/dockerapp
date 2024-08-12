@@ -19,7 +19,7 @@ def mainpage():
 	cache_value = None;
 	if cache.get(key):
 		cache_value = cache.get(key).decode('utf-8')
-
+	print("*")
 	return render_template('index.html', key=key, cache_value=cache_value)
 
 if __name__ == '__main__':
