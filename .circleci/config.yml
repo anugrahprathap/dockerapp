@@ -10,6 +10,7 @@ jobs:
           name: Install dependencies
           command: |
             pip install --upgrade pip
+            pip install --upgrade docker-py
             pip install docker-compose
       - run:
           name: Run tests
