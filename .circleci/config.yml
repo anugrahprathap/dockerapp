@@ -3,19 +3,14 @@ jobs:
   build:
     working_directory: /dockerapp
     docker:
-      - image: docker:17.05.0-ce-git
+      - image: python:3.9 # Use a Python 3 image
     steps:
       - checkout
-      - setup_remote_docker
       - run:
           name: Install dependencies
           command: |
-            apk update
-            apk add --no-cache py-pip
-            apk add --no-cache ca-certificates
             pip install --upgrade pip
-            pip install docker-compose --index-url=https://pypi.org/simple
-
+            pip install docker-compose
       - run:
           name: Run tests
           command: |
